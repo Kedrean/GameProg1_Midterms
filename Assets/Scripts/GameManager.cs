@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     public GameObject eggPrefab;
     public GameObject chickPrefab;
     public GameObject henPrefab;
-    public GameObject roosterPrefab;
+    public GameObject cattoPrefab;
     public Counter counter;
 
     private Vector3 spawnPosition = new Vector3(0, 20f, 0);
@@ -40,10 +40,10 @@ public class GameManager : MonoBehaviour
         counter.henCount++;
     }
 
-    public void SpawnRooster(Vector3 position)
+    public void SpawnCatto(Vector3 position)
     {
-        GameObject rooster = Instantiate(roosterPrefab, position, Quaternion.Euler(-90, 0, 0));
-        rooster.tag = "Rooster";
-        counter.roosterCount++;
+        GameObject catto = Instantiate(cattoPrefab, position, Quaternion.Euler(-90, 0, 0));
+        catto.tag = "Catto";
+        counter.cattoCount++;
     }
 }

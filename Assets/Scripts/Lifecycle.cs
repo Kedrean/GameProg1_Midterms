@@ -29,8 +29,8 @@ public class Lifecycle : MonoBehaviour
             case "Hen":
                 StartCoroutine(LayEggsAndDie());
                 break;
-            case "Rooster":
-                StartCoroutine(PerishRooster());
+            case "Catto":
+                StartCoroutine(PerishCatto());
                 break;
         }
     }
@@ -42,7 +42,7 @@ public class Lifecycle : MonoBehaviour
 
         counter.eggCount--;
         gameManager.SpawnChick(transform.position + Vector3.up * 0.5f);
-        Debug.Log("Egg hatched into a chick.");
+        Debug.Log("The great eggscape!");
         Destroy(gameObject);
     }
 
@@ -57,19 +57,19 @@ public class Lifecycle : MonoBehaviour
         {
             firstChickMatured = true;
             gameManager.SpawnHen(transform.position + Vector3.up * 0.5f);
-            Debug.Log("First chick matured into a hen.");
+            Debug.Log("Ding! Leveled up to a clucking boss lady hen!");
         }
         else
         {
             if (Random.value > 0.5f)
             {
                 gameManager.SpawnHen(transform.position + Vector3.up * 0.5f);
-                Debug.Log("Chick matured into a hen.");
+                Debug.Log("From peep to hen-sation!");
             }
             else
             {
-                gameManager.SpawnRooster(transform.position + Vector3.up * 0.5f);
-                Debug.Log("Chick matured into a rooster.");
+                gameManager.SpawnCatto(transform.position + Vector3.up * 0.5f);
+                Debug.Log("The cluck who struck gold and became a catto.");
             }
         }
         Destroy(gameObject);
@@ -84,24 +84,24 @@ public class Lifecycle : MonoBehaviour
         for (int i = 0; i < numberOfEggs; i++)
         {
             StartCoroutine(gameManager.SpawnEggWithDelay(i * 0.5f));
-            Debug.Log("Laid an egg.");
+            Debug.Log("Hatched a plan and dropped an egg!");
         }
 
         float perishTime = 10f; // Remaining time to perish after laying eggs
         yield return new WaitForSeconds(perishTime);
 
         counter.henCount--;
-        Debug.Log("Hen has perished.");
+        Debug.Log("Off to coop heaven, where the worms are endless!");
         Destroy(gameObject);
     }
 
-    private IEnumerator PerishRooster()
+    private IEnumerator PerishCatto()
     {
         float perishTime = 40f;
         yield return new WaitForSeconds(perishTime);
 
-        counter.roosterCount--;
-        Debug.Log("Rooster has perished.");
+        counter.cattoCount--;
+        Debug.Log("Catto has run out of lives.");
         Destroy(gameObject);
     }
 }

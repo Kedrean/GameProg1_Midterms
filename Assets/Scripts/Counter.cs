@@ -8,12 +8,12 @@ public class Counter : MonoBehaviour
 	public int eggCount = 0;
 	public int chickCount = 0;
 	public int henCount = 0;
-	public int roosterCount = 0;
+	public int cattoCount = 0;
 	
 	public Text eggText;
 	public Text chickText;
 	public Text henText;
-	public Text roosterText;
+	public Text cattoText;
 	public Text clockText;
 
     private float elapsedTime = 0f;
@@ -24,7 +24,7 @@ public class Counter : MonoBehaviour
         eggText.text = "Eggs: " + eggCount;
         chickText.text = "Chicks: " + chickCount;
         henText.text = "Hens: " + henCount;
-        roosterText.text = "Roosters: " + roosterCount;
+        cattoText.text = "Cattos: " + cattoCount;
 
         // Update the clock
         elapsedTime += Time.deltaTime;
